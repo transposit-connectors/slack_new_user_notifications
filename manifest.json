@@ -56,6 +56,18 @@
           "js": "reminder.js"
         }
       }],
+      "dataConnections": [{
+        "ref": "slack.raw",
+        "overrides": {
+          "swagger": {
+            "oauthConfig": {
+              "accessTokenPath": "bot.bot_access_token"
+            },
+            "executionLimits": {
+            }
+          }
+        }
+      }],
       "javascriptAPIVersion": "3",
       "source": "src",
       "userSettingsDisplay": "GENERATED"

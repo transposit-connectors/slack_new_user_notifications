@@ -61,6 +61,7 @@
         "overrides": {
           "swagger": {
             "oauthConfig": {
+              "scope": "bot",
               "accessTokenPath": "bot.bot_access_token"
             },
             "executionLimits": {

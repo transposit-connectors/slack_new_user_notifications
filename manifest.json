@@ -69,6 +69,18 @@
             }
           }
         }
+      }, {
+        "ref": "slackbot.raw",
+        "overrides": {
+          "swagger": {
+            "oauthConfig": {
+              "scope": "bot",
+              "accessTokenPath": "bot.bot_access_token"
+            },
+            "executionLimits": {
+            }
+          }
+        }
       }],
       "javascriptAPIVersion": "3",
       "source": "src",

@@ -17,9 +17,10 @@ The user can accept the Terms of Service using message buttons. If a user has be
 3. Enable Interactive components (See _Enable Interactive Components_ below)
 4. Navigate to the **OAuth & Permissions** page and add the following scopes:
    - `chat:write:bot`
-5. Click 'Save Changes' and install the app (You should get an OAuth access token after the installation)
-6. Enable the events (See _Enable the Events API_ below. It doesn't let you the Request URL until you run the code!)
-7. In your Slack workspace, invite the bot to #general, where the new user will join.
+5. Add https://accounts.transposit.com/oauth/v2/handle-redirect as a Redirect URI.
+6. Click 'Save Changes' and install the app (You should get an OAuth access token after the installation)
+7. Enable the events (See _Enable the Events API_ below. It doesn't let you the Request URL until you run the code!)
+8. In your Slack workspace, invite the bot to #general, where the new user will join.
 
 #### Fork in Transposit
 

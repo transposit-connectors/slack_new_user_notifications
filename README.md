@@ -25,6 +25,8 @@ The user can accept the Terms of Service using message buttons. If a user has be
 
 1. [Fork this app on Transposit](https://console.transposit.com/t/transposit-sample/slack_terms_of_service_sample?readme=true)
 2. Authenticate your API token with Slack
+3. Authenticate slackbot's API token with the Client iD in your Slack App under Authentication.
+4. Under configuration, set slackbot `AccessTokenPath` to `bot.bot_access_token` and the scope to the OAuth values in your app.
 
 #### Enable the Events API
 

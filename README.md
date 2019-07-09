@@ -29,13 +29,13 @@ The user can accept the Terms of Service using message buttons. If a user has be
 #### Enable the Events API
 
 1. Go back to the app settings and click on Events Subscriptions
-2. Set the Request URL to the generated webhok url for `newuser` in Transposit under Deploy
+2. Set the Request URL to the generated webhook url for `newuser` in Transposit under Deploy
 3. On the same page, subscribe to the `team_join` team events
 
 #### Enable Interactive Messages
 
 1. In the app settings, click on Interactive Messages
-2. Set the Request URL to the generated webhok url for `acceptpush` in Transposit under Deploy
+2. Set the Request URL to the generated webhook url for `acceptpush` in Transposit under Deploy
 
 Note: Database functions require a user provided database. Sample code is provided.
 

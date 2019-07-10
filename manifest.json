@@ -71,12 +71,24 @@
             "name": "id",
             "type": "STRING"
           }],
-          "tql": "SELECT * FROM airtable.create_record\n  WHERE baseId='appxd7g7VAj6gcz6x'\n  AND table='Accepted'\n  AND $body=(SELECT {\n    'fields' : {'slackId': @id },\n  })\n"
+          "tql": "SELECT * FROM airtable.create_record\n  WHERE baseId='appxd7g7VAj6gcz6x'\n  AND table='Users'\n  AND $body=(SELECT {\n    'fields' : {'slackId': @id, 'accepted': false },\n  })\n"
         }
       }, {
         "id": "get_records",
         "tql": {
-          "tql": "SELECT fields.slackId[0] FROM airtable.get_records\n  WHERE baseId='appxd7g7VAj6gcz6x'\n  AND table='accepted'\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
+          "tql": "SELECT * FROM airtable.get_records\n  WHERE baseId='appxd7g7VAj6gcz6x'\n  AND table='Users'\n"
+        }
+      }, {
+        "id": "update_record",
+        "tql": {
+          "parameters": [{
+            "name": "record",
+            "type": "STRING"
+          }, {
+            "name": "id",
+            "type": "STRING"
+          }],
+          "tql": "SELECT * FROM airtable.update_record\n  WHERE recordId=@record\n  AND baseId='appxd7g7VAj6gcz6x'\n  AND table='Users'\n  AND $body=(SELECT {\n    'fields' : { 'slackId': @id, 'accepted': true }\n  })\n"
         }
       }],
       "dataConnections": [{

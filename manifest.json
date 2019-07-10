@@ -65,11 +65,6 @@
           "js": "reminder.js"
         }
       }, {
-        "id": "get_record",
-        "tql": {
-          "tql": "SELECT * FROM airtable.get_record\n  WHERE recordId='<required_string>'\n  AND baseId='<required_string>'\n  AND table='<required_string>'\n"
-        }
-      }, {
         "id": "create_record",
         "tql": {
           "parameters": [{
@@ -77,6 +72,11 @@
             "type": "STRING"
           }],
           "tql": "SELECT * FROM airtable.create_record\n  WHERE baseId='appxd7g7VAj6gcz6x'\n  AND table='Accepted'\n  AND $body=(SELECT {\n    'fields' : {'slackId': @id },\n  })\n"
+        }
+      }, {
+        "id": "get_records",
+        "tql": {
+          "tql": "SELECT fields.slackId[0] FROM airtable.get_records\n  WHERE baseId='appxd7g7VAj6gcz6x'\n  AND table='accepted'\n\n/*\n * For sample code and reference material, visit\n * https://www.transposit.com/docs/get-started/sql-quickstart\n */"
         }
       }],
       "dataConnections": [{

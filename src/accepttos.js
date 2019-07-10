@@ -1,5 +1,5 @@
 ({ http_event, db }) => {
   let body = JSON.parse(http_event.body);
-  db.push(`/${body.event.team}/${body.event.user}`, true);
-  return { status_code: 200 };
+  //api.run('this.create_record', {id: body.user.id})
+  return body;{ status_code: 200 };
 }

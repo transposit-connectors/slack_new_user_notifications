@@ -14,5 +14,5 @@
       api.run('this.post_tos', {userid: body.event.user.id, message: 'Welcome to the team! We\'re glad you\'re here.'});
     }
   }
-  return ; { status_code: 200 };
+  return { status_code: 200 };
 }

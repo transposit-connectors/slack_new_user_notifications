@@ -1,12 +1,9 @@
 ( params ) => {
-  let raw_approved = api.run('this.get_records');
-  let approved = [];
-  for (let i = 0; i < raw_approved.length; i++) {
-    if (raw_approved[i].fields.slackId && !(approved.includes(raw_approved[i].fields.slackId))) {
-      approved.push(raw_approved[i].fields.slackId);
+  let users = api.run('this.get_records');
+  for (let i = 0; i < users.length; i++) {
+    if (users[i].fields.approved != true) {
+      api.run('this.post_tos', {userid: users[i].fields.slackId, message: 'REMINDER'});
     }
-  }
-  //if ()
-  
-  return approved;//.includes('ULBCAQ66BH');
+  }  
+  return 0;
 }

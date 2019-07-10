@@ -28,6 +28,7 @@ The user can accept the Terms of Service using message buttons. If a user has be
 2. Authenticate your API token with Slack
 3. Authenticate slackbot's API token with the Client iD in your Slack App under Authentication.
 4. Under configuration, set slackbot `AccessTokenPath` to `bot.bot_access_token` and the scope to the OAuth values in your app.
+5. Set up your Airtable workspace for use as a database.
 
 #### Enable the Events API
 
@@ -46,8 +47,14 @@ Note: Database functions require a user provided database. Sample code is provid
 
 `acceptpush`: The function that is called when the accept button is pressed in Slack.
 
+`create_record`: Creates a new record in Airtable for the new user.
+
+`get_records`: The Airtable API call to return all records.
+
 `newuser`: The function that is called when a new user joins a workspace.
 
 `post_tos`: The Slack API call to post the welcome message.
 
 `reminder`: A scheduled task to remind users who have not accepted the TOS to accept them.
+
+`update_record`: Updates a user's record in airtable when they accept.

@@ -66,6 +66,7 @@
         }
       }, {
         "id": "create_record",
+        "description": "Creates the new user record",
         "tql": {
           "parameters": [{
             "name": "id",
@@ -75,11 +76,13 @@
         }
       }, {
         "id": "get_records",
+        "description": "Returns all records in Airtable",
         "tql": {
           "tql": "SELECT * FROM airtable.get_records\n  WHERE baseId='appxd7g7VAj6gcz6x'\n  AND table='Users'\n"
         }
       }, {
         "id": "update_record",
+        "description": "Updates those who accept in the database",
         "tql": {
           "parameters": [{
             "name": "record",

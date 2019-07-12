@@ -22,11 +22,21 @@ The user can accept the Terms of Service using message buttons. If a user has be
 7. Enable the events (See _Enable the Events API_ below. It doesn't let you the Request URL until you run the code!)
 8. In your Slack workspace, invite the bot to #general, where the new user will join.
 
+### Create your Database in Airtable
+
+1. Add a new base in Airtable. If you are new to Airtable, check out their [Support Center](https://support.airtable.com/hc/en-us).
+2. Modify your table with the name `Users` and
+   - First column `slackId` with type "Single line text"
+   - Second column `accepted` with type "Checkbox"
+
 #### Fork in Transposit
 
 1. [Fork this app on Transposit](https://console.transposit.com/t/transposit-sample/slack_terms_of_service_sample?readme=true)
-2. Authenticate your API token with Slack
-3. Set up your Airtable workspace for use as a database.
+2. Authenticate your API token with Slack and Airtable under `/deploy/production-keys`
+3. Change all the Airtable specific strings to those matching your credentials.
+   - `create_record` baseId
+   - `get_records` baseId
+   - `update_record` baseId
 
 #### Enable the Events API
 

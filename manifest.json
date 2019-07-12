@@ -72,13 +72,13 @@
             "name": "id",
             "type": "STRING"
           }],
-          "tql": "SELECT * FROM airtable.create_record\n  WHERE baseId='appxd7g7VAj6gcz6x'\n  AND table='Users'\n  AND $body=(SELECT {\n    'fields' : {'slackId': @id, 'accepted': false },\n  })\n"
+          "tql": "SELECT * FROM airtable.create_record\n  WHERE baseId='appxd7g7VAj6gcz6x'\t\t-- Change this to your airtable baseId\n  AND table='Users'\n  AND $body=(SELECT {\n    'fields' : {'slackId': @id, 'accepted': false },\n  })\n"
         }
       }, {
         "id": "get_records",
         "description": "Returns all records in Airtable",
         "tql": {
-          "tql": "SELECT * FROM airtable.get_records\n  WHERE baseId='appxd7g7VAj6gcz6x'\n  AND table='Users'\n"
+          "tql": "SELECT * FROM airtable.get_records\n  WHERE baseId='appxd7g7VAj6gcz6x'\t\t-- Change this to your airtable baseId\n  AND table='Users'\n"
         }
       }, {
         "id": "update_record",
@@ -91,7 +91,7 @@
             "name": "id",
             "type": "STRING"
           }],
-          "tql": "SELECT * FROM airtable.update_record\n  WHERE recordId=@record\n  AND baseId='appxd7g7VAj6gcz6x'\n  AND table='Users'\n  AND $body=(SELECT {\n    'fields' : { 'slackId': @id, 'accepted': true }\n  })\n"
+          "tql": "SELECT * FROM airtable.update_record\n  WHERE recordId=@record\n  AND baseId='appxd7g7VAj6gcz6x'\t\t-- Change this to your airtable baseId\n  AND table='Users'\n  AND $body=(SELECT {\n    'fields' : { 'slackId': @id, 'accepted': true }\n  })\n"
         }
       }],
       "dataConnections": [{

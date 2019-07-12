@@ -22,7 +22,7 @@ The user can accept the Terms of Service using message buttons. If a user has be
 7. Enable the events (See _Enable the Events API_ below. It doesn't let you the Request URL until you run the code!)
 8. In your Slack workspace, invite the bot to #general, where the new user will join.
 
-### Create your Database in Airtable
+#### Create your Database in Airtable
 
 1. Add a new base in Airtable. If you are new to Airtable, check out their [Support Center](https://support.airtable.com/hc/en-us).
 2. Modify your table with the name `Users` and

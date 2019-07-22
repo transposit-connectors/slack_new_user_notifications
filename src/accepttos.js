@@ -7,7 +7,7 @@
     i += 1;
     record = records[i].id;
   }
-  records[i][1] = false;
+  records[i][1] = true;
   stash.put("db", records);
   return { status_code: 200 };
 }

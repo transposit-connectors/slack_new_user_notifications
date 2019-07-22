@@ -10,16 +10,7 @@
   }
   
   if (!http_event.headers['X-Slack-Retry-Num']) {
-    //api.run('this.create_record', {id: body.event.user.id})
-    let new_db = [];
-    if (stash.get("db") == null) {
-		new_db = [];
-    }
-    else {
-        new_db = stash.get("db");
-    }
-    new_db.push([body.event.user.id, false]);
-    stash.put("db", new_db);
+    stash.put(body.event.user.id, false);
     api.run('this.post_tos', {userid: body.event.user.id, message: 'Welcome to the team! We\'re glad you\'re here.'});
   }
   return { status_code: 200 };

@@ -11,11 +11,12 @@
   
   if (!http_event.headers['X-Slack-Retry-Num']) {
     //api.run('this.create_record', {id: body.event.user.id})
-    if (stash.get("db" == null)) {
-		let new_db = [];
+    let new_db = [];
+    if (stash.get("db") == null) {
+		new_db = [];
     }
     else {
-        let new_db = stash.get("db");
+        new_db = stash.get("db");
     }
     new_db.push([body.event.user.id, false]);
     stash.put("db", new_db);

@@ -61,22 +61,6 @@
         "function": {
           "js": "reminder.js"
         }
-      }, {
-        "id": "create_record",
-        "description": "Creates the new user record",
-        "tql": {
-          "parameters": [{
-            "name": "id",
-            "type": "STRING"
-          }],
-          "tql": "SELECT * FROM airtable.create_record\n  WHERE baseId='appxd7g7VAj6gcz6x'\t\t-- Change this to your airtable baseId\n  AND table='Users'\n  AND $body=(SELECT {\n    'fields' : {'slackId': @id, 'accepted': false },\n  })\n"
-        }
-      }, {
-        "id": "get_records",
-        "description": "Returns all records in Airtable",
-        "tql": {
-          "tql": "SELECT * FROM airtable.get_records\n  WHERE baseId='appxd7g7VAj6gcz6x'\t\t-- Change this to your airtable baseId\n  AND table='Users'\n"
-        }
       }],
       "dataConnections": [{
         "ref": "slack.raw",

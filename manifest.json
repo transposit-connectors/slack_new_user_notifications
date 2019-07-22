@@ -7,9 +7,6 @@
       }, {
         "name": "transposit/slack:v1.*.*",
         "alias": "slackbot"
-      }, {
-        "name": "transposit/airtable:v2.*.*",
-        "alias": "airtable"
       }],
       "operations": [{
         "id": "post_tos",
@@ -22,7 +19,7 @@
             "name": "message",
             "type": "STRING"
           }],
-          "tql": "SELECT * FROM slackbot.post_chat_message\n  WHERE $body=(SELECT {\n  \t'link_names' : true,\n    'channel' : @userid,\n  \t'text' : @message,\n  \t'as_user': true,\n    'attachments' : [{\n      'title': 'What is Slack?',\n      'text': 'Slack is where work happens. If this is your first time using Slack, take some time to read the help docs at get.slack.help and our internal wiki. If you have any questions, jump into #help-slack and we\\'ll help you out',\n      'color': '#74c8ed',\n    },\n    {\n      'title': 'Code of Conduct',\n      'text': 'Our goal is to maintain a safe, helpful and friendly community for everyone, regardless of experience, gender identity and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, age, religion, nationality, or other defining characteristic. Please take the time to read through <https://code.localhost|Code of Conduct> before continuing.',\n      'callback_id': 'terms-of-service',\n      'color': '#3060f0',\n      'actions': [{\n        'name': 'accept',\n        'text': 'Accept',\n        'type': 'button',\n        'value': 'accept',\n        'style': 'primary',\n      }],\n    }]\n  })\n"
+          "tql": "SELECT * FROM slackbot.post_chat_message\n  WHERE $body=(SELECT {\n  \t'link_names' : true,\n    'channel' : @userid,\n  \t'text' : @message,\n  \t'as_user': true,\n    'attachments' : [{\n      'title': 'What is Transposit?',\n      'text': 'Transposit is the first API composition platform, where we empowe developers to easily build apps in the expanding API ecosystem, so they can focus on the fun, not the tedium. Learn more at https://www.transposit.com/about/',\n      'color': '#74c8ed',\n    },\n    {\n      'title': 'Code of Conduct',\n      'text': 'Our goal is to maintain a safe, helpful and friendly community for everyone, regardless of experience, gender identity and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, age, religion, nationality, or other defining characteristic. Please take the time to read through <https://code.localhost|Code of Conduct> before continuing.',\n      'callback_id': 'terms-of-service',\n      'color': '#3060f0',\n      'actions': [{\n        'name': 'accept',\n        'text': 'Accept',\n        'type': 'button',\n        'value': 'accept',\n        'style': 'primary',\n      }],\n    }]\n  })\n"
         }
       }, {
         "id": "newuser",
@@ -63,35 +60,6 @@
         "description": "A reminder to accept that runs as a scheduled task",
         "function": {
           "js": "reminder.js"
-        }
-      }, {
-        "id": "create_record",
-        "description": "Creates the new user record",
-        "tql": {
-          "parameters": [{
-            "name": "id",
-            "type": "STRING"
-          }],
-          "tql": "SELECT * FROM airtable.create_record\n  WHERE baseId='appxd7g7VAj6gcz6x'\t\t-- Change this to your airtable baseId\n  AND table='Users'\n  AND $body=(SELECT {\n    'fields' : {'slackId': @id, 'accepted': false },\n  })\n"
-        }
-      }, {
-        "id": "get_records",
-        "description": "Returns all records in Airtable",
-        "tql": {
-          "tql": "SELECT * FROM airtable.get_records\n  WHERE baseId='appxd7g7VAj6gcz6x'\t\t-- Change this to your airtable baseId\n  AND table='Users'\n"
-        }
-      }, {
-        "id": "update_record",
-        "description": "Updates those who accept in the database",
-        "tql": {
-          "parameters": [{
-            "name": "record",
-            "type": "STRING"
-          }, {
-            "name": "id",
-            "type": "STRING"
-          }],
-          "tql": "SELECT * FROM airtable.update_record\n  WHERE recordId=@record\n  AND baseId='appxd7g7VAj6gcz6x'\t\t-- Change this to your airtable baseId\n  AND table='Users'\n  AND $body=(SELECT {\n    'fields' : { 'slackId': @id, 'accepted': true }\n  })\n"
         }
       }],
       "dataConnections": [{

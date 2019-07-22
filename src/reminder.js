@@ -1,8 +1,8 @@
 ( params ) => {
-  let users = api.run('this.get_records');
+  let users = stash.get("keys");
   for (let i = 0; i < users.length; i++) {
-    if (users[i].fields.approved != true) {
-      api.run('this.post_tos', {userid: users[i].fields.slackId, message: 'REMINDER'});
+    if (!stash.get(users[i])) {
+      api.run('this.post_tos', {userid: users[i], message: 'REMINDER'});
     }
   }  
   return 0;

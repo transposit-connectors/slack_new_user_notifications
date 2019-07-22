@@ -1,12 +1,13 @@
 ({ http_event, db }) => {
   let body = JSON.parse(http_event.parsed_body.payload);
-  let records = api.run('this.get_records');
+  let records = stash.get("db");
   // Find the right record id in airtable
-  let i = 0, record = records[0].id;
+  let i = 0, record = records[0][0];
   while (records[i].fields.slackId != body.user.id) {
     i += 1;
     record = records[i].id;
   }
-  api.run('this.update_record', {record: record, id: body.user.id})
+  records[i][1] = false;
+  stash.put("db", records);
   return { status_code: 200 };
 }

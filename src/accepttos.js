@@ -3,7 +3,7 @@
   let records = stash.get("db");
   // Find the right record id in airtable
   let i = 0, record = records[0][0];
-  while (records[i].fields.slackId != body.user.id) {
+  while (records[i][0] != body.user.id) {
     i += 1;
     record = records[i].id;
   }

@@ -77,19 +77,6 @@
         "tql": {
           "tql": "SELECT * FROM airtable.get_records\n  WHERE baseId='appxd7g7VAj6gcz6x'\t\t-- Change this to your airtable baseId\n  AND table='Users'\n"
         }
-      }, {
-        "id": "update_record",
-        "description": "Updates those who accept in the database",
-        "tql": {
-          "parameters": [{
-            "name": "record",
-            "type": "STRING"
-          }, {
-            "name": "id",
-            "type": "STRING"
-          }],
-          "tql": "SELECT * FROM airtable.update_record\n  WHERE recordId=@record\n  AND baseId='appxd7g7VAj6gcz6x'\t\t-- Change this to your airtable baseId\n  AND table='Users'\n  AND $body=(SELECT {\n    'fields' : { 'slackId': @id, 'accepted': true }\n  })\n"
-        }
       }],
       "dataConnections": [{
         "ref": "slack.raw",

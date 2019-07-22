@@ -10,6 +10,15 @@
   }
   
   if (!http_event.headers['X-Slack-Retry-Num']) {
+    let keys = [];
+    if (stash.get("keys") == null)) {
+      stash.put("keys", keys);
+    }
+    else {
+      keys = stash.get("keys");
+      keys.push(body.event.user.id);
+    }
+    
     stash.put(body.event.user.id, false);
     api.run('this.post_tos', {userid: body.event.user.id, message: 'Welcome to the team! We\'re glad you\'re here.'});
   }

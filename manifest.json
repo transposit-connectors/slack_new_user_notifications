@@ -3,9 +3,6 @@
     "transposit": {
       "dependencies": [{
         "name": "transposit/slack:v1.*.*",
-        "alias": "slack"
-      }, {
-        "name": "transposit/slack:v1.*.*",
         "alias": "slackbot"
       }],
       "operations": [{

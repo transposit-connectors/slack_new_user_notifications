@@ -1,5 +1,5 @@
 ({ http_event }) => {
-  let body = JSON.parse(http_event.body);
+  let body = http_event.parsed_body;
   if (body.challenge) {
     // https://api.slack.com/events/url_verification
 	return {

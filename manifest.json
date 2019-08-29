@@ -29,7 +29,8 @@
             },
             "type": "OBJECT"
           }],
-          "js": "webhook.js"
+          "js": "webhook.js",
+          "lang": "js"
         },
         "access": {
           "requireApiKey": true,
@@ -46,7 +47,8 @@
             },
             "type": "OBJECT"
           }],
-          "js": "accepttos.js"
+          "js": "accepttos.js",
+          "lang": "js"
         },
         "access": {
           "requireApiKey": true,
@@ -56,7 +58,8 @@
         "id": "reminder",
         "description": "A reminder to accept that runs as a scheduled task",
         "function": {
-          "js": "reminder.js"
+          "js": "reminder.js",
+          "lang": "js"
         }
       }],
       "dataConnections": [{
@@ -85,6 +88,8 @@
       "javascriptAPIVersion": "3",
       "source": "src",
       "userSettingsDisplay": "GENERATED"
-    }
+    },
+    "description": "A Transposit port of the Slack blueprint to have new users accept a ToS",
+    "displayName": "Slack New User Notifications"
   }
 }

@@ -1,5 +1,4 @@
 # Slack New User Notifications
-# Sending a Welcome Message to a New User
 
 > _Updated July 2019: This are specific instructions for use in Transposit. For other methods, check the Slack API website. Interested in reading more? Check out the [blog post](https://www.transposit.com/blog/2019.07.22-slack-blueprint/) we wrote about it!_
 

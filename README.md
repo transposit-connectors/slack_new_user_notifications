@@ -24,9 +24,13 @@ The user can accept the Terms of Service using message buttons. If a user has be
 
 #### Fork in Transposit
 
-1. [Fork this app on Transposit](https://console.transposit.com/t/transposit-sample/slack_terms_of_service_sample?readme=true)
-2. Authenticate your API token with Slack and Airtable under `/deploy/production-keys`
-3. Authenticate slackbot's API token with the Client iD in your Slack App under Authentication
+1. [Fork this app on Transposit](https://console.transposit.com/t/transposit-sample/slack_new_user_notifications?fork=true)
+2. Configure your Slack App's connection to Transposit:
+
+   1. Find your Client ID and Secret in your Slack app under **Basic Information > App Credentials**.
+   2. In your Transposit app, go to **Data connections > Slack > Authentication** and change the values to your Slack app's Client ID and Secret.
+
+3. Add Slack's key to production under **Deploy > Production Keys** and follow the instructions.
 
 #### Enable the Events API
 
@@ -37,9 +41,7 @@ The user can accept the Terms of Service using message buttons. If a user has be
 #### Enable Interactive Messages
 
 1. In the app settings, click on Interactive Messages
-2. Set the Request URL to the generated webhook url for `acceptpush` in Transposit under Deploy
-
-Note: Database functions require a user provided database. Sample code is provided.
+2. Set the Request URL to the generated webhook url for `acceptpush` in Transposit under `Deploy > Endpoints`
 
 ### Transposit Functions
 
